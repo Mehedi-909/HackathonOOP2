@@ -15,15 +15,20 @@ public class Transaction extends JFrame implements ActionListener{
    {
    label1 = new JLabel();
    label1.setText("Username:");
-   text1 = new JTextField(30);
+   text1 = new JTextField(60);
+   
+   l3 = new JLabel();
+   l3.setText("Account Number:");
+   t3 = new JTextField(60);
  
    label2 = new JLabel();
    label2.setText("Password:");
-   text2 = new JPasswordField(30);
+   text2 = new JPasswordField(60);
+   
   
    SUBMIT=new JButton("SUBMIT");
    
-   panel=new JPanel(new GridLayout(5,2));
+   panel=new JPanel(new GridLayout(6,2));
    panel.add(label1);
    panel.add(text1);
    panel.add(label2);
@@ -38,18 +43,16 @@ public class Transaction extends JFrame implements ActionListener{
    String value1=text1.getText();
    String value2=text2.getText();
    
-   Student s1=new Student("Mehedi","Mr","Mrs","909","2016-415-038",3.50,"iit123");
-   Student s2=new Student("Fahim","MDF","MrsF","932","2016-429-075",3.45,"iit12345");
-   
    Account a1=new Account(98776,"Mehedi",455677,5000.00,"iit123");
+   Account a2=new Account(99876,"Sudip",454677,7000.00,"iit12345");
    
    
    FileOutputStream fout;
 try {
-	fout = new FileOutputStream("C:\\Users\\MD Mehedi Hasan\\Desktop\\lab\\src\\lab\\Personal.txt");
+	fout = new FileOutputStream("C:\\Users\\MD Mehedi Hasan\\Desktop\\lab\\src\\lab\\BankingAccount.txt");
 	 ObjectOutputStream out=new ObjectOutputStream(fout);
-	 out.writeObject(s1);
-	 out.writeObject(s2);
+	 out.writeObject(a1);
+	 out.writeObject(a2);
 	 
 	 out.close();
 } catch (FileNotFoundException e) {
@@ -61,9 +64,6 @@ try {
    
    String n=a1.getName();
    String p=a1.getPassword();
-   
-   String name=s1.getName();
-   String pass=s1.getPassword();
    
    if (value1.equals(n) && value2.equals(p)) {
    NextPage page=new NextPage();

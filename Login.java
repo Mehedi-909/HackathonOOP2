@@ -34,7 +34,7 @@ class Login extends JFrame implements ActionListener
    panel.add(SUBMIT);
    add(panel,BorderLayout.CENTER);
    SUBMIT.addActionListener(this);
-   setTitle("LOGIN for banking transaction");
+   setTitle("LOGIN for getting certificate");
    }
   public void actionPerformed(ActionEvent ae)
    {
@@ -60,15 +60,11 @@ try {
 } catch (IOException e) {
 	e.printStackTrace();
 }  
-    
-   
-   String n=a1.getName();
-   String p=a1.getPassword();
    
    String name=s1.getName();
    String pass=s1.getPassword();
    
-   if (value1.equals(n) && value2.equals(p)) {
+   if (value1.equals(name) && value2.equals(pass)) {
    NextPage page=new NextPage();
    page.setVisible(true);
    JLabel label = new JLabel("Welcome:"+value1);
