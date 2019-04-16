@@ -1,12 +1,10 @@
 package lab;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
-  
-class Login extends JFrame implements ActionListener
- {
+public class Transaction extends JFrame implements ActionListener{
+
 	String s;
 	String[] words;
 	private static final long serialVersionUID = 1L;
@@ -14,19 +12,18 @@ class Login extends JFrame implements ActionListener
   JPanel panel,p2;
   JLabel label1,label2,l3,l4;
    JTextField  text1,text2,t3,t4;
-   Login()
    {
    label1 = new JLabel();
    label1.setText("Username:");
-   text1 = new JTextField(15);
+   text1 = new JTextField(30);
  
    label2 = new JLabel();
    label2.setText("Password:");
-   text2 = new JPasswordField(15);
+   text2 = new JPasswordField(30);
   
    SUBMIT=new JButton("SUBMIT");
    
-   panel=new JPanel(new GridLayout(3,1));
+   panel=new JPanel(new GridLayout(5,2));
    panel.add(label1);
    panel.add(text1);
    panel.add(label2);
@@ -81,9 +78,5 @@ try {
    }
    
    }
-   
- }
-  
-
-
-  
+	
+}

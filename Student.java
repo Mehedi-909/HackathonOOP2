@@ -1,6 +1,8 @@
 package lab;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student  implements Serializable{
 	String name;
 	String father;
 	String mother;
